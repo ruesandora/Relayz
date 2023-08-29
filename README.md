@@ -122,6 +122,7 @@ cd output/x86_64-unknown-linux-gnu
 
 # Hiç çalışmayan sunucunuz görselde ki gibi ram veya cpu yiyorsa sıkıntı yoktur
 # Ayrıca buradan isminizi görebilirsiniz: https://relayz.io/network/nodes
+```
 
 ![image](https://github.com/ruesandora/Relayz/assets/101149671/0c5255f9-ddfc-40e7-b01f-3ea11452c9a0)
 
