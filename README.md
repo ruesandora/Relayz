@@ -92,8 +92,37 @@ exit
 docker-compose up -d
 ```
 
+```console
+# Yukarıda dediğim gibi ram ve cpu maksimum seviye geliyor, 1 GB swap açalım sunucumuzu rahatlatalım.
+sudo fallocate -l 1024M /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+# htop ile 1024M Swp görüyorsanız htopta okey
+```
+
+```console
+# gerekli dosyamızı indirip unzip yapalım.
 wget https://relayz.io/resources/files/binaries/node-cli-x64.zip
 sudo apt install unzip
 unzip node-cli-x64.zip
+# gerekli dizine girelim
 cd output/x86_64-unknown-linux-gnu
+
+# ruesandora.testnet kısmını kendi cüzdan isminizle değiştirip enterleyin.
+./node-cli init ruesandora.testnet
+
+# çıkan 2 seçenek olacak, ilkini seçip yeni private key oluşturun.
+# komuttan sonra size bir link verecek (rengi pembe büyük ihtimalle), bunu oluşurduğunuz near cüzdanı sayfasında arama çubuğuna yapıştırın.
+# Testnet cüzdanınızdan Relayz için size ait private key'i onaylayın.
+# Sonrasında sunucunuza geri dönüp enter'e basın.
+
+# Tebrikler.
+
+# Hiç çalışmayan sunucunuz görselde ki gibi ram veya cpu yiyorsa sıkıntı yoktur
+# Ayrıca buradan isminizi görebilirsiniz: https://relayz.io/network/nodes
+
+![image](https://github.com/ruesandora/Relayz/assets/101149671/0c5255f9-ddfc-40e7-b01f-3ea11452c9a0)
+
 
