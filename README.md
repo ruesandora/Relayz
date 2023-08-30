@@ -53,11 +53,8 @@ docker-compose version
 sudo usermod -aG docker $USER
 newgrp docker
 
-mkdir -p ~/.zsh/completion
-curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose > ~/.zsh/completion/_docker-compose
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
-exec $SHELL -l
+sudo curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+source /etc/bash_completion.d/docker-compose
 ```
 ```console
 # nano ile docker-compose.yml içine giriyoruz
