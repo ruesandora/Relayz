@@ -53,6 +53,7 @@ docker-compose version
 sudo usermod -aG docker $USER
 newgrp docker
 
+# sudo curl -L.. komutunda hata alırsanız tırnakları silip bu komutu girin: <sudo mkdir -p /etc/bash_completion.d/>
 sudo curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 source /etc/bash_completion.d/docker-compose
 ```
@@ -84,9 +85,6 @@ docker run --rm -it  --name test alpine:latest /bin/sh
 cat /etc/os-release
 exit
 # cat komutunda alpine logları gözükür.
-
-# Docker kurulumumuz burada tamamlanıyor.
-docker-compose up -d
 ```
 
 ```console
