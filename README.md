@@ -8,6 +8,7 @@ sudo apt update && sudo apt upgrade -y
 
 # Gerekli kütüphaneler ve docker kurulumu
 sudo apt -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+# Eğer bu komutta size y/n seçeneği çıkmıyorsa sorun var demektir, y şıkkını seçmelisiniz.
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
 
 # Tek komut ( \ ibaresi komutun devamını belirtir)
