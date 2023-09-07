@@ -5,6 +5,13 @@
 ```console
 # Sunucu güncellemesini bir çok kez yapabiliriz şaşırmayalım bunun için:
 sudo apt update && sudo apt upgrade -y
+sudo apt install -y curl wget
+
+# swap alanı açalım
+sudo fallocate -l 5240M /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
 
 # Gerekli kütüphaneler ve docker kurulumu
 sudo apt -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
@@ -30,52 +37,22 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 sudo systemctl enable --now docker
 sudo usermod -aG docker $USER
 newgrp docker
-
-# Versionlar v2.24.4 veya benzer bir version çıkmalıdır. 
-docker version
-docker compose version
-
-# reboot attıktan bir kaç dakika sonrasında sunucumuza giriş yapabilir
-reboot
 ```
-
-![image](https://github.com/ruesandora/Relayz/assets/101149671/708c90c9-8d66-45a6-bd0b-a499659b4ad1)
 
 ```console
 # Güncellemler ve wget'i yüklüyoruz.
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y curl wget
 
 # docker-compose ayarlamaları
 curl -s https://api.github.com/repos/docker/compose/releases/latest | grep browser_download_url  | grep docker-compose-linux-x86_64 | cut -d '"' -f 4 | wget -qi -
 chmod +x docker-compose-linux-x86_64
 sudo mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 
-docker-compose version
-
-# exec komutuna kadar değişkendir problem yaşarsanız devam edebilirsiniz.
-sudo usermod -aG docker $USER
-newgrp docker
-
-# sudo curl -L.. komutunda hata alırsanız tırnakları silip bu komutu girin: <sudo mkdir -p /etc/bash_completion.d/>
+sudo mkdir -p /etc/bash_completion.d/
 sudo curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 source /etc/bash_completion.d/docker-compose
-```
-```console
-# nano ile docker-compose.yml içine giriyoruz
-nano docker-compose.yml
 
-# bu kısmı komple kopyalayıp yapıştırıp ctrl + x + y ile kaydedip çıkıyoruz.
-version: '3'  
-services:
-  web:
-    image: nginx:latest
-    ports:
-     - "8080:80"
-    links:
-     - php
-  php:
-    image: php:7-fpm
+echo -e "version: '3'\nservices:\n  web:\n    image: nginx:latest\n    ports:\n     - \"8080:80\"\n    links:\n     - php\n  php:\n    image: php:7-fpm" > docker-compose.yml
 ```
 ```console
 # docker testimizi yapıyoruz
@@ -92,20 +69,11 @@ exit
 ```
 
 ```console
-# Yukarıda dediğim gibi ram ve cpu maksimum seviye geliyor, 1 GB swap açalım sunucumuzu rahatlatalım.
-sudo fallocate -l 1024M /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
-
-# htop ile 1024M Swp görüyorsanız htopta okey
-```
-
-```console
 # gerekli dosyamızı indirip unzip yapalım.
 wget https://relayz.io/resources/files/binaries/node-cli-x64.zip
 sudo apt install unzip
 unzip node-cli-x64.zip
+
 # gerekli dizine girelim
 cd output/x86_64-unknown-linux-gnu
 
