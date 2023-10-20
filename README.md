@@ -1,5 +1,11 @@
 <h1 align="center">Relayz</h1>
 
+> Aktif olduğunuz her gün boyunca 10 RELY token alırsınız.
+
+> Diğer sorular rehberin sonundadır.
+
+> Önemli linkler: [Duyuru](https://t.me/RuesAnnouncement) - [Sohbet](https://t.me/RuesChat) -  [WP Kanalı](https://whatsapp.com/channel/0029VaBcj7V1dAw1H2KhMk34) - [Discord](https://discord.gg/huEG2JNj)
+
 <h1 align="center">Donanım</h1>
 
 ```console
@@ -46,6 +52,8 @@ sudo add-apt-repository \
 sudo apt update && sudo apt upgrade -y
 ```
 
+<h1 align="center">Docker ayarlamaları</h1>
+
 ```console
 # Docker compose ve gerekli ayarlar.
 sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
@@ -69,6 +77,9 @@ source /etc/bash_completion.d/docker-compose
 
 echo -e "version: '3'\nservices:\n  web:\n    image: nginx:latest\n    ports:\n     - \"8080:80\"\n    links:\n     - php\n  php:\n    image: php:7-fpm" > docker-compose.yml
 ```
+
+<h1 align="center">Docker testi</h1>
+
 ```console
 # docker testimizi yapıyoruz
 docker-compose up -d
@@ -82,6 +93,8 @@ docker run --rm -it  --name test alpine:latest /bin/sh
 cat /etc/os-release
 exit
 ```
+
+<h1 align="center">Node'umuzu çalıştıralım</h1>
 
 ```console
 # gerekli dosyamızı indirip unzip yapalım.
@@ -108,6 +121,8 @@ chmod +x node-cli
 ```
 
 > Node'unuzu buradan [online](https://relayz.io/network/nodes) olup olmadığını kontrol edebilirsiniz.
+
+> Soracağınız diğer sorular [burada](https://relayz.io/network/overview) mevcuttur.
 
 
 
