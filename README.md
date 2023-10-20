@@ -40,11 +40,9 @@ sudo swapon /swapfile
 # Gerekli kütüphaneler ve docker kurulumu
 sudo apt -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 
-# debian uyumlu dockeri indirelim.
-curl -fsSL https://download.docker.com/linux/debian/gpg
-
+# debian uyumlu dockeri indirelim. komutu 2 kez girelim.
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
 # !! y seçeneğini seçiyoruz !!
-sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
 
 # Tek komut (enter çıkarsa enterleyin çıkmazsa no problem)
 sudo add-apt-repository \
