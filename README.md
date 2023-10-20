@@ -6,6 +6,8 @@
 
 > Önemli linkler: [Duyuru](https://t.me/RuesAnnouncement) - [Sohbet](https://t.me/RuesChat) -  [WP Kanalı](https://whatsapp.com/channel/0029VaBcj7V1dAw1H2KhMk34) - [Discord](https://discord.gg/huEG2JNj)
 
+> Sağ üstten fork & yıldız yapmayı unutmayın!
+
 <h1 align="center">Donanım</h1>
 
 > En muhim olanı internettir, [Hetzner](https://github.com/ruesandora/Hetzner) kullanıyorum.
