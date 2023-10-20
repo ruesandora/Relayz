@@ -8,6 +8,8 @@
 
 <h1 align="center">Donanım</h1>
 
+> En muhim olanı internettir, [Hetzner](https://github.com/ruesandora/Hetzner) kullanıyorum.
+
 ```console
 # Minimum
 2 CPU 4 RAM - Debian 10 - 11 - 12
