@@ -124,5 +124,5 @@ chmod +x node-cli
 
 > Soracağınız diğer sorular [burada](https://relayz.io/network/overview) mevcuttur.
 
-
+> Relayz'ın [ortaklarından](https://foresightnews.pro/article/detail/26887) birisi Lifeform'dur, Lifeform'un en büyük yatırımcısı Binance Labsdır, bunuda bırakayım.
 
