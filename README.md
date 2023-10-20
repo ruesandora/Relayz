@@ -1,6 +1,16 @@
-# Relayz
+<h1 align="center">Relayz</h1>
 
-# Kurulum
+<h1 align="center">Donanım</h1>
+
+```console
+# Minimum
+2 CPU 4 RAM - Debian 10 - 11 - 12
+
+# Önerilen
+4 CPU 8 RAM - Debian 11
+```
+
+<h1 align="center">Kurulum</h1>
 
 > [Buradan](https://testnet.mynearwallet.com/) bir near testnet wallet'ı oluşturunuz.
 
