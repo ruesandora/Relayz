@@ -1,9 +1,13 @@
 # Relayz
 
+# Kurulum
+
 > [Buradan](https://testnet.mynearwallet.com/) bir near testnet wallet'ı oluşturunuz.
 
+> Daha sonra [buraya](https://relayz.io/welcome/ruesandora0.testnet) cüzdanı bağlayıp bir profil oluşturunuz.
+
 ```console
-# Sunucu güncellemesini bir çok kez yapabiliriz şaşırmayalım bunun için:
+# Güncellemeler
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y curl wget
 
@@ -16,12 +20,13 @@ sudo swapon /swapfile
 # Gerekli kütüphaneler ve docker kurulumu
 sudo apt -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 
-# DİKKAT !!! EN ÖNEMLİ KISIM
-# Eğer bu komutta size y/n seçeneği çıkmıyorsa sorun var demektir, y şıkkını seçmelisiniz.
-# Bu komutta genelde ilk olarak girdiğinizde seçenek çıkmaz ama 2. sefer girerseniz y/n görürsünüz.
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
+# debian uyumlu dockeri indirelim.
+curl -fsSL https://download.docker.com/linux/debian/gpg
 
-# Tek komut ( \ ibaresi komutun devamını belirtir)
+# !! y seçeneğini seçiyoruz !!
+sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
+
+# Tek komut (enter çıkarsa enterleyin çıkmazsa no problem)
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/debian \
    $(lsb_release -cs) \
@@ -40,7 +45,7 @@ newgrp docker
 ```
 
 ```console
-# Güncellemler ve wget'i yüklüyoruz.
+# Güncellemler ve wgeti yüklüyoruz.
 sudo apt update && sudo apt upgrade -y
 
 # docker-compose ayarlamaları
@@ -60,12 +65,12 @@ docker-compose up -d
 docker-compose stop
 docker-compose rm -f
 
-# Bu komuttan sonra açılan alpine konsoluna..
+# Bu komutu giriyoruz
 docker run --rm -it  --name test alpine:latest /bin/sh
-# ..önce cat komutu daha sonra exit girip çıkıyoruz.
+
+# açılan konsola bu iki komutu sırayla giriyoruz:
 cat /etc/os-release
 exit
-# cat komutunda alpine logları gözükür.
 ```
 
 ```console
@@ -74,23 +79,25 @@ wget https://relayz.io/resources/files/binaries/node-cli-x64.zip
 sudo apt install unzip
 unzip node-cli-x64.zip
 
-# gerekli dizine girelim
-cd output/x86_64-unknown-linux-gnu
+# izinleri verelim
+mv node-cli-x64 node-cli
+chmod +x node-cli
 
 # ruesandora.testnet kısmını kendi cüzdan isminizle değiştirip enterleyin.
 ./node-cli init ruesandora.testnet
 
 # çıkan 2 seçenek olacak, ilkini seçip yeni private key oluşturun.
 # komuttan sonra size bir link verecek (rengi pembe büyük ihtimalle), bunu oluşurduğunuz near cüzdanı sayfasında arama çubuğuna yapıştırın.
-# Testnet cüzdanınızdan Relayz için size ait private key'i onaylayın.
+# Daha sonra şifrenizi girip onaylama işlemlerini yapın
+# 3-4 dakika kadar bekleyin 
 # Sonrasında sunucunuza geri dönüp enter'e basın.
 
 # Tebrikler.
 
-# Hiç çalışmayan sunucunuz görselde ki gibi ram veya cpu yiyorsa sıkıntı yoktur
-# Ayrıca buradan isminizi görebilirsiniz: https://relayz.io/network/nodes
+# !! NOT: Sunucuzda ki .secret.json u yedekleyin lütfen !!
 ```
 
-![image](https://github.com/ruesandora/Relayz/assets/101149671/0c5255f9-ddfc-40e7-b01f-3ea11452c9a0)
+> Node'unuzu buradan [online](https://relayz.io/network/nodes) olup olmadığını kontrol edebilirsiniz.
+
 
 
