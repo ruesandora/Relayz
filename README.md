@@ -1,3 +1,6 @@
+# YENI KATILIMCI SU AN KABUL EDİLMİYOR
+
+
 <h1 align="center">Relayz</h1>
 
 > Aktif olduğunuz her gün boyunca 10 RELY token alırsınız.
@@ -100,7 +103,7 @@ exit
 
 ```console
 # gerekli dosyamızı indirip unzip yapalım.
-wget https://relayz.io/resources/files/binaries/node-cli-x64.zip
+YENI KATILIMCI SU AN KABUL EDİLMİYOR
 sudo apt install unzip
 unzip node-cli-x64.zip
 
